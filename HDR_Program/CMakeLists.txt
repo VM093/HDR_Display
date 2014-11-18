@@ -27,6 +27,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 include_directories( ${QT_INCLUDE_DIR} )
 include_directories( ${EIGEN3_INCLUDE_DIR} )
 include_directories( ${PROJECT_SOURCE_DIR}/src )
+include_directories( ${PROJECT_SOURCE_DIR}/src/correction )
 #include_directories( ${PROJECT_SOURCE_DIR}/lib3ds )
 
 add_definitions(-DHDR_DIR="${PROJECT_SOURCE_DIR}")
@@ -37,10 +38,14 @@ set(HDR_SRCS src/main.cpp src/DisplayManager.h src/DisplayManager.cpp
              src/DisplayDevice.h src/DisplayDevice.cpp src/HDRProcess.h
              src/HDRProcess.cpp src/FrontPanel.h src/FrontPanel.cpp
              src/BackPanel.h src/BackPanel.cpp src/ImageManager.h
-             src/ImageManager.cpp src/Correction.h src/Correction.cpp
+             src/ImageManager.cpp
              src/Window.h src/Window.cpp src/GLRender.h src/GLRender.cpp
              src/ImageIO.h src/ImageIO.cpp src/Image.h src/Image.cpp
              src/Includes.h
+             src/correction/Correction.h src/correction/Correction.cpp
+             src/correction/Linearisation.cpp src/correction/Linearisation.h
+             src/correction/courbe.cpp src/correction/courbe.h
+
               ${APPLE_WORKAROUND_SRCS})
 
 #qt4_automoc(${sire_SRCS})
